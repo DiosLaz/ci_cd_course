@@ -8,9 +8,9 @@ namespace pipeline_crashcourse.Controllers
     public class AccountController : ControllerBase
     {
         [HttpGet("/Login")]
-        public IActionResult Logins()
+        public IActionResult Logins(string username, string password)
         {
-            return Ok("Works fines login updated");
+            return Ok($@"Your user name is {username} and password is {password}");
         }
 
 
@@ -18,6 +18,12 @@ namespace pipeline_crashcourse.Controllers
         public IActionResult Registers()
         {
             return Ok("Works fine, register updated");
+        }
+
+        [HttpGet("/RegisterAll")]
+        public IActionResult RegisterALl(string data)
+        {
+            return Ok(data);
         }
     }
 }
